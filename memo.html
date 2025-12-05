@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>狙い目情報</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="scroll-header">狙い目情報メモ</header>
+
+
+<main>
+<section class="bamboo-section">
+<h2 id="machineTitle"></h2>
+
+
+<div id="memoDisplay" class="bamboo-paper"></div>
+
+
+<button class="seal-button" id="editBtn" onclick="editMemo()">再編集</button>
+<button class="seal-button" id="newBtn" onclick="newMemo()">新規作成</button>
+
+
+<div id="memoEditor" style="display:none;">
+<textarea id="memoInput" class="bamboo-input"></textarea>
+<button class="seal-button" onclick="saveMemo()">保存</button>
+</div>
+</section>
+</main>
+
+
+<script>
+const machine = new URLSearchParams(window.location.search).get('name');
+document.getElementById("machineTitle").textContent = machine;
+
+
+function loadMemo() {
+const memo = localStorage.getItem("memo_" + machine) || "";
+document.getElementById("memoDisplay").innerHTML = memo.replace(/\n/g, "<br>");
+}
+
+
+function newMemo() {
+document.getElementById("memoEditor").style.display = "block";
+document.getElementById("memoInput").value = "";
+}
+
+
+function editMemo() {
+const memo = localStorage.getItem("memo_" + machine) || "";
+document.getElementById("memoInput").value = memo;
+document.getElementById("memoEditor").style.display = "block";
+}
+
+
+function saveMemo() {
+const text = document.getElementById("memoInput").value;
+localStorage.setItem("memo_" + machine, text);
+document.getElementById("memoEditor").style.display = "none";
+loadMemo();
+}
+
+
+loadMemo();
+</script>
+</body>
+</html>

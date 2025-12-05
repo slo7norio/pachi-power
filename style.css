@@ -1,0 +1,63 @@
+body {
+margin: 0;
+background: #f6f0d6;
+font-family: 'serif';
+}
+
+
+/* 巻物ヘッダー */
+.scroll-header {
+background: url('scroll-header.png') center/cover no-repeat;
+color: #5a2b0c;
+text-align: center;
+padding: 40px 0;
+font-size: 28px;
+font-weight: bold;
+}
+
+
+/* 龍のセクション枠 */
+.dragon-section {
+background: url('dragon-frame.png') center/contain no-repeat;
+padding: 40px;
+margin: 20px;
+}
+
+
+/* 竹簡デザイン */
+.bamboo-section {
+background: url('paper-bamboo.png') repeat-y;
+padding: 20px;
+margin: 20px;
+border-radius: 10px;
+}
+
+
+.bamboo-paper {
+background: #fffaf0;
+padding: 20px;
+min-height: 150px;
+border: 1px solid #bfa96a;
+font-size: 18px;
+line-height: 1.6em;
+}
+
+
+.bamboo-input {
+width: 100%;
+height: 200px;
+background: #fffbea;
+border: 1px solid #bfa96a;
+font-size: 18px;
+}
+
+
+/* 封蝋ボタン */
+.seal-button {
+background: url('seal-red.png') center/cover no-repeat;
+width: 100px;
+height: 100px;
+border: none;
+cursor: pointer;
+margin: 10px;
+}
